@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="form-group" style="padding: 5%; background-color: ghostwhite;">
+        <div class="row">
+            <div class="col-md-5">
+                <label>Entrada</label>
+                <textarea id="txtEntrada" style="height: 500px;" class="form-control shadow p-3 mb-5 bg-white rounded"></textarea>
+            </div>
+            <div style="margin-top: 50px;">
+                <button id="btnConverter" onclick="converter()" class="btn btn-primary">Converter</button>
+            </div>
+            <div class="col-md-5">
+                <label>Saida</label>
+                <textarea id="txtSaida" style="height: 500px;" class="form-control shadow p-3 mb-5 bg-white rounded"></textarea>
+            </div>
+        </div>
+    </div>
+    <script>
+        
+        function converter(){
+
+            var entrada = document.getElementById('txtEntrada').value;
+            var txtSaida = document.getElementById('txtSaida');
+
+            var resultado = entrada.replace( /([A-Z])/g, " $1" );
+            var saida = resultado.charAt(0).toUpperCase() + resultado.slice(1);
+
+            txtSaida.value = saida;
+        }
+
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</body>
+</html>
